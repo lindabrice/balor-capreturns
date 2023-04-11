@@ -39,6 +39,10 @@ const UserSchema = new Schema({
         type: Boolean,
         default: false,
     },
+    hasUploaded: {
+        type: Boolean,
+        default: false,
+    },
     deposits: {
         type: Number,
         default: 0,

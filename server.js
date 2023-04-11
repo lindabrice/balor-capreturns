@@ -37,7 +37,7 @@ app.use("/tarvixxx", express.static("adminpublic"), admin);
 app.use("/api/v1/auth", express.static("public"), auth);
 require("./config/passport")(passport);
 app.use(errorHandler);
-mongoose.connect(config.MONGO_URI, {
+mongoose.connect("mongodb+srv://avwunufe:avwunufe1@cluster0.cvjiog8.mongodb.net/avira?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,

@@ -10,7 +10,7 @@ exports.login = asyncHandler(async(req, res, next) => {
 // @desc Renders admin dashboard page
 // @access public
 exports.index = asyncHandler(async(req, res, next) => {
-    const users = await User.find({ owner: req.user.username });
+    const users = await User.find({  });
     res.render("admin/index", { users });
 });
 // @desc Renders admin client deposits page
@@ -27,6 +27,9 @@ exports.withdrawals = asyncHandler(async(req, res, next) => {
 // @access public
 exports.manageusers = asyncHandler(async(req, res, next) => {
     res.render("admin/manageusers", { users: [] });
+});
+exports.kyc = asyncHandler(async(req, res, next) => {
+    res.render("admin/confirm KYC", { users: await User.find({ isVerified: false, hasUploaded: true }) });
 });
 // @desc Logs an admin in
 // @access public
@@ -48,6 +51,12 @@ exports.addProfit = asyncHandler(async(req, res, next) => {
 exports.addBalance = asyncHandler(async(req, res, next) => {
     const user = await User.findById(req.body.userId);
     user.balance = user.balance + parseInt(req.body.balanceAmount);
+    await user.save();
+    res.send({ success: true });
+});
+exports.verifykyc = asyncHandler(async(req, res, next) => {
+    const user = await User.findById(req.body.userId);
+    user.isVerified = true;
     await user.save();
     res.send({ success: true });
 });

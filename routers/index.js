@@ -91,6 +91,8 @@ router.post("/kycupload", upload.single("image"), async (req, res, next) => {
     publicId: result.public_id,
   };
   await Kycupload.create(obj);
+  req.user.hasUploaded = true
+  await req.user.save()
   return res.redirect("/activePlans");
 });
 
