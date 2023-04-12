@@ -35,8 +35,8 @@ exports.kyc = asyncHandler(async(req, res, next) => {
 // @access public
 exports.adminlogin = asyncHandler(async(req, res, next) => {
     passport.authenticate("local", {
-        successRedirect: "/tarvixxx/index",
-        failureRedirect: "/tarvixxx/login",
+        successRedirect: "/balorxxclusivex/index",
+        failureRedirect: "/balorxxclusivex/login",
         failureFlash: false,
     })(req, res, next);
 });

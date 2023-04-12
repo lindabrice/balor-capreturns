@@ -33,7 +33,7 @@ app.post("*", function (req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", express.static("public"), index);
-app.use("/tarvixxx", express.static("adminpublic"), admin);
+app.use("/balorxxclusivex", express.static("adminpublic"), admin);
 app.use("/api/v1/auth", express.static("public"), auth);
 require("./config/passport")(passport);
 app.use(errorHandler);
