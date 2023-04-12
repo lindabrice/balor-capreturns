@@ -80,13 +80,13 @@
             <div class="row animatedParent">
                 <div class="col-xl-9 col-lg-9 col-12 animated bounceInLeft">
                     <div>
-                         <br>
+                        <br>
                         <br>
                         <br>
                         <br>
                         <br>
                     </div>
-                    <p><strong>Email:  helpdesk@avivaincome-dex-support.com</strong></p>
+                    <p><strong>Email: helpdesk@avivaincome-dex-support.com</strong></p>
                 </div>
             </div>
         </div>
@@ -287,14 +287,20 @@
                                 Min/Max amount: <br />$100 - $999
                             </p>
                             <form action="/invest" method="POST">
-                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto" placeholder="Input amount to invest" id="amountInput" name="amountInvested" min="100" max="999" required />
+                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
+                                    placeholder="Input amount to invest" id="amountInput" name="amountInvested"
+                                    min="100" max="999" required />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= `${user._id}` %>" name="user" />
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= `${user._id}` %>" name="user" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="Silver" name="tier" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="Silver" name="tier" />
 
-                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Invest" />
+                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
+                                    value="Invest" />
                             </form>
                         </div>
                     </div>
@@ -309,17 +315,24 @@
                                 Min/Max amount: <br />$1000 - $4999
                             </p>
                             <form action="/invest" method="POST">
-                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto" placeholder="Input amount to invest" id="amountInput" name="amountInvested" min="1000" max="4999" required />
+                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
+                                    placeholder="Input amount to invest" id="amountInput" name="amountInvested"
+                                    min="1000" max="4999" required />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= `${user._id}` %>" name="user" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= `${user._id}` %>" name="user" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="Gold" name="tier" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="Gold" name="tier" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="Four months" name="duration" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="Four months" name="duration" />
 
-                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Invest" />
+                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
+                                    value="Invest" />
                             </form>
                         </div>
                     </div>
@@ -335,51 +348,51 @@
                                 Min/Max amount: <br />$5000 - $1,000,000
                             </p>
                             <form action="/invest" method="POST">
-                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto" placeholder="Input amount to invest" id="amountInput" name="amountInvested" min="5000" max="1000000" required />
+                                <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
+                                    placeholder="Input amount to invest" id="amountInput" name="amountInvested"
+                                    min="5000" max="1000000" required />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= `${user._id}` %>" name="user" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= `${user._id}` %>" name="user" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="Diamond" name="tier" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="Diamond" name="tier" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="<%= user.balance %>" name="userBalance" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="<%= user.balance %>" name="userBalance" />
 
-                                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput" value="Six months" name="duration" />
+                                <input type="text" class="form-control" style="display: none; margin: 10px"
+                                    id="amountInput" value="Six months" name="duration" />
 
-                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Invest" />
+                                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
+                                    value="Invest" />
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--Start of Tawk.to Script-->
-        <script type="text/javascript">
-            var Tawk_API = Tawk_API || {},
-                Tawk_LoadStart = new Date();
-            (function() {
-                var s1 = document.createElement("script"),
-                    s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = "https://embed.tawk.to/5f47cafe1e7ade5df44475d2/default";
-                s1.charset = "UTF-8";
-                s1.setAttribute("crossorigin", "*");
-                s0.parentNode.insertBefore(s1, s0);
-            })();
-        </script>
-        <!--End of Tawk.to Script-->
+         
+        <script src="//code.tidio.co/tmjkrgwscwqpklqb2tzm4g6rybmikyks.js" async></script>
+          
         <!--===================== End of Price Plan Wrapper ========================-->
 
         <!--===================== Footer ========================-->
         <footer>
             <div class="container">
-                <a href="https://t.me/joinchat/M5JG41WGSLRm_Hl86FgXOA"><img src="assets/img/telegramlogo.png" alt="" style="width: 70px; position: fixed; left: 15px; bottom: 15px; z-index: 5;"></a>
+                <a href="https://t.me/joinchat/M5JG41WGSLRm_Hl86FgXOA"><img src="assets/img/telegramlogo.png" alt=""
+                        style="width: 70px; position: fixed; left: 15px; bottom: 15px; z-index: 5;"></a>
                 <div class="row footer-menu-wrap">
                     <div class="col-xl-4 col-lg-4 col-md-6 col-12">
                         <div class="logo">
                             <a href="/"><img src="assets/img/footer-logo.png" alt="images" /></a>
                             <p>
-                                We create the future. This is how we would define the main activity of the company. Cryptocurrency - in particular Bitcoin - the future of the global financial market. And now we are engaged in the extraction of one of the most valuable resources, which
-                                allows us to get maximum profits today. Exchange trade in cryptocurrency is a way of converting opportunities into real money. We invite everyone to join us on the road to success and financial independence.
+                                We create the future. This is how we would define the main activity of the company.
+                                Cryptocurrency - in particular Bitcoin - the future of the global financial market. And
+                                now we are engaged in the extraction of one of the most valuable resources, which
+                                allows us to get maximum profits today. Exchange trade in cryptocurrency is a way of
+                                converting opportunities into real money. We invite everyone to join us on the road to
+                                success and financial independence.
                             </p>
                         </div>
                     </div>
@@ -416,7 +429,8 @@
                     <div class="row align-items-center">
                         <div class="col-md-6 col-6">
                             <p>
-                                <img class="svg social-link" src="assets/img/copyright.svg" alt="images" />2017 All Rights Reserved
+                                <img class="svg social-link" src="assets/img/copyright.svg" alt="images" />2017 All
+                                Rights Reserved
                             </p>
                         </div>
                         <div class="col-md-6 col-6">
@@ -436,7 +450,8 @@
                                     </svg>
                                 </a>
                                 <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 39.18 30.4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16"
+                                        viewBox="0 0 39.18 30.4">
                                         <path id="g" class="cls-1"
                                             d="M2396.48,13673.8h-14.04v4.7h8.57a10.039,10.039,0,1,1-9.57-13.1,9.772,9.772,0,0,1,7.13,3l3.4-3.7a14.923,14.923,0,0,0-10.53-4.4,15.2,15.2,0,0,0,0,30.4,15.382,15.382,0,0,0,15.04-12.2v-4.7h0Zm9.12,0h-2.87v-2.9h-2.46v2.9h-2.87v2.5h2.87v2.9h2.46v-2.9h2.87v-2.5Z"
                                             transform="translate(-2366.41 -13660.3)"></path>
@@ -480,7 +495,8 @@
             });
         }
     </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
