@@ -726,6 +726,9 @@
                                                         data-spook="<%=`${user.id}`%>">Verify</button>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <img style="max-width: 25%;" src="<%=`${user.kycImage}`%>" alt="">
+                                            </tr>
                                             <% }) %>
 
 
@@ -744,111 +747,27 @@
         <script src="jquery-3.5.1.min.js"></script>
         <script>
             let index
-            const profitModal = document.getElementById('profitModal')
-            const balanceModal = document.getElementById('balanceModal')
-            const depositModal = document.getElementById('depositModal')
-            const profitModalBtns = document.getElementsByClassName('profitModalBtn')
-            const depositModalBtns = document.getElementsByClassName('depositModalBtn')
             const balanceModalBtns = document.getElementsByClassName('balanceModalBtn')
-            const closeBtnProfit = document.getElementById('closeBtnProfit')
-            const closeBtnBalance = document.getElementById('closeBtnBalance')
-            const closeBtnDeposit = document.getElementById('closeBtnDeposit')
-            const profitForm = document.getElementById('profitForm');
-            const depositForm = document.getElementById('depositForm');
-            const balanceForm = document.getElementById('balanceForm');
-            const depositAmount = document.getElementById('depositAmount');
-            const profitAmount = document.getElementById('profitAmount');
-            const balanceAmount = document.getElementById('balanceAmount');
-            for (let i = 0; i < profitModalBtns.length; i++) {
-                profitModalBtns[i].addEventListener('click', () => {
-                    profitModal.style.display = "block";
-                    index = i
-                })
-            }
-            for (let i = 0; i < profitModalBtns.length; i++) {
-                closeBtnProfit.addEventListener('click', () => {
-                    profitModal.style.display = "none";
-                })
-            }
-            profitForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const userId = profitModalBtns[index].dataset.userid
-                const payload = {
-                    profitAmount: profitAmount.value,
-                    userId
-                };
-                e.preventDefault();
-                $.ajax({
-                    method: "post",
-                    url: "/balorxxclusivex/addprofit",
-                    data: JSON.stringify(payload),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (data) {
-                        location.reload()
-                    }
-                })
-            });
             for (let i = 0; i < balanceModalBtns.length; i++) {
-                balanceModalBtns[i].addEventListener('click', () => {
-                    balanceModal.style.display = "block";
-                    index = i
-                })
+                balanceModalBtns[i].addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const userId = balanceModalBtns[i].dataset.spook
+                    const payload = {
+                        userId
+                    };
+                    e.preventDefault();
+                    $.ajax({
+                        method: "post",
+                        url: "/balorxxclusivex/verifykyc",
+                        data: JSON.stringify(payload),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success: function (data) {
+                            location.reload()
+                        }
+                    })
+                });
             }
-            for (let i = 0; i < balanceModalBtns.length; i++) {
-                closeBtnBalance.addEventListener('click', () => {
-                    balanceModal.style.display = "none";
-                })
-            }
-            balanceForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const userId = balanceModalBtns[index].dataset.userid
-                const payload = {
-                    balanceAmount: balanceAmount.value,
-                    userId
-                };
-                e.preventDefault();
-                $.ajax({
-                    method: "post",
-                    url: "/balorxxclusivex/addbalance",
-                    data: JSON.stringify(payload),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (data) {
-                        location.reload()
-                    }
-                })
-            });
-            for (let i = 0; i < depositModalBtns.length; i++) {
-                depositModalBtns[i].addEventListener('click', () => {
-                    depositModal.style.display = "block";
-                    index = i
-                })
-            }
-            for (let i = 0; i < depositModalBtns.length; i++) {
-                closeBtnProfit.addEventListener('click', () => {
-                    depositModal.style.display = "none";
-                })
-            }
-            depositForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const userId = depositModalBtns[index].dataset.userid
-                const payload = {
-                    depositAmount: depositAmount.value,
-                    userId
-                };
-                e.preventDefault();
-                $.ajax({
-                    method: "post",
-                    url: "/balorxxclusivex/adddeposit",
-                    data: JSON.stringify(payload),
-                    contentType: "application/json",
-                    dataType: "json",
-                    success: function (data) {
-                        location.reload()
-                    }
-                })
-            });
         </script>
 </body>
 

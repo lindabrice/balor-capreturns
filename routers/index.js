@@ -92,6 +92,7 @@ router.post("/kycupload", upload.single("image"), async (req, res, next) => {
   };
   await Kycupload.create(obj);
   req.user.hasUploaded = true
+  req.user.kycImage = result.secure_url
   await req.user.save()
   return res.redirect("/activePlans");
 });

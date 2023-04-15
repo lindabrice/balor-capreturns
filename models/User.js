@@ -64,6 +64,9 @@ const UserSchema = new Schema({
     phoneNumber: {
         type: String,
     },
+    kycImage: {
+        type: String,
+    },
     owner: {
         type: String,
     },
