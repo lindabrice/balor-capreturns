@@ -8,11 +8,11 @@ const InvestmentSchema = new Schema(
     },
     tier: {
       type: String,
-      enum: ["Gold", "Silver", "Diamond"],
+      enum: ["Classic", "Premium", "Mega"],
     },
     duration: {
       type: String,
-      default: "Three weeks",
+      default: "24 hrs",
     },
     amountInvested: {
       type: Number,
