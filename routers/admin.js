@@ -11,6 +11,7 @@ const {
     verifykyc,
     kyc,
     addDeposit,
+    approveDeposit, 
 } = require("../controllers/admin");
 
 router.route("/index").get(index);
@@ -23,5 +24,6 @@ router.route("/addbalance").post(addBalance);
 router.route("/verifykyc").post(verifykyc);
 router.route("/kyc").get(kyc);
 router.route("/adddeposit").post(addDeposit);
+router.route("/approveDeposit").post(approveDeposit);
 
 module.exports = router;

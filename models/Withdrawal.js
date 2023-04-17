@@ -14,12 +14,12 @@ const WithdrawalSchema = new Schema(
     },
     status: {
       type: String,
-      default: "pending",
-      enum: ["pending", "processed"],
+      default: "Pending",
+      enum: ["Pending", "Processed"],
     },
     paymentMode: {
       type: String,
-      default: "bitcoin",
+      default: "Bitcoin",
     },
     bitcoinAddress: {
       type: String,

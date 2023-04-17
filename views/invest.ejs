@@ -281,15 +281,15 @@
                             <div class="price-plan-icon-wrap">
                                 <img class="price-plan-item-icon" src="assets/img/our-price-icon-2.svg" alt="images" />
                             </div>
-                            <h4>Silver</h4>
-                            <h2 class="price-plan-text-1">100%</h2>
+                            <h4>Classic</h4>
+                            <h2 class="price-plan-text-1">15% in 24 hrs</h2>
                             <p class="price-plan-text-2">
-                                Min/Max amount: <br />$100 - $999
+                                Min/Max amount: <br />$500 - $5000
                             </p>
                             <form action="/invest" method="POST">
                                 <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
                                     placeholder="Input amount to invest" id="amountInput" name="amountInvested"
-                                    min="100" max="999" required />
+                                    min="500" max="5000" required />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
                                     id="amountInput" value="<%= `${user._id}` %>" name="user" />
@@ -297,7 +297,7 @@
                                     id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
-                                    id="amountInput" value="Silver" name="tier" />
+                                    id="amountInput" value="Classic" name="tier" />
 
                                 <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
                                     value="Invest" />
@@ -310,26 +310,26 @@
                                 <img class="price-plan-item-icon" src="assets/img/our-price-icon-3.svg" alt="images" />
                             </div>
                             <h4>Gold</h4>
-                            <h2 class="price-plan-text-1">120%</h2>
+                            <h2 class="price-plan-text-1">20% in 48 hrs</h2>
                             <p class="price-plan-text-2">
-                                Min/Max amount: <br />$1000 - $4999
+                                Min/Max amount: <br />$5000 - $50000
                             </p>
                             <form action="/invest" method="POST">
                                 <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
                                     placeholder="Input amount to invest" id="amountInput" name="amountInvested"
-                                    min="1000" max="4999" required />
+                                    min="5000" max="50000" required />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
                                     id="amountInput" value="<%= `${user._id}` %>" name="user" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
-                                    id="amountInput" value="Gold" name="tier" />
+                                    id="amountInput" value="Premium" name="tier" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
                                     id="amountInput" value="<%= `${user.balance}` %>" name="userBalance" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
-                                    id="amountInput" value="Four months" name="duration" />
+                                    id="amountInput" value="48 hrs" name="duration" />
 
                                 <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
                                     value="Invest" />
@@ -342,10 +342,10 @@
                                 <img class="price-plan-item-icon" src="assets/img/our-price-icon-4.svg" alt="images" />
                             </div>
                             <h4>Diamond</h4>
-                            <p><strong>(Long term)</strong></p>
-                            <h2 class="price-plan-text-1">150%</h2>
+                            <!-- <p><strong>(Long term)</strong></p> -->
+                            <h2 class="price-plan-text-1">30% in 48 hrs</h2>
                             <p class="price-plan-text-2">
-                                Min/Max amount: <br />$5000 - $1,000,000
+                                Min/Max amount: <br />$5000 - $1000000
                             </p>
                             <form action="/invest" method="POST">
                                 <input type="number" class="form-control" style="max-width: 200px; margin: 10px auto"
@@ -356,13 +356,13 @@
                                     id="amountInput" value="<%= `${user._id}` %>" name="user" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
-                                    id="amountInput" value="Diamond" name="tier" />
+                                    id="amountInput" value="Mega" name="tier" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
                                     id="amountInput" value="<%= user.balance %>" name="userBalance" />
 
                                 <input type="text" class="form-control" style="display: none; margin: 10px"
-                                    id="amountInput" value="Six months" name="duration" />
+                                    id="amountInput" value="48 hrs" name="duration" />
 
                                 <input style="margin: 10px; border: none" class="see-brd-btn" type="submit"
                                     value="Invest" />

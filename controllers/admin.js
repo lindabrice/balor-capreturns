@@ -1,6 +1,7 @@
 const User = require("../models/User");
 const asyncHandler = require("../middleware/async");
 const passport = require("passport");
+const Deposit = require("../models/Deposit");
 
 // @desc Renders admin login page
 // @access public
@@ -16,7 +17,9 @@ exports.index = asyncHandler(async(req, res, next) => {
 // @desc Renders admin client deposits page
 // @access public
 exports.deposits = asyncHandler(async(req, res, next) => {
-    res.render("admin/clientdeposits", { users: [] });
+    const users = await User.find({});
+    const deposits = await Deposit.find({});
+    res.render("admin/clientdeposits", { users, deposits });
 });
 // @desc Renders admin client withdrawals page
 // @access public
@@ -64,5 +67,11 @@ exports.addDeposit = asyncHandler(async(req, res, next) => {
     const user = await User.findById(req.body.userId);
     user.deposits = user.deposits + parseInt(req.body.depositAmount);
     await user.save();
+    res.send({ success: true });
+});
+exports.approveDeposit = asyncHandler(async(req, res, next) => {
+    const deposit = await Deposit.findById(req.body.userId);
+    deposit.status = "Confirmed";
+    await deposit.save();
     res.send({ success: true });
 });
