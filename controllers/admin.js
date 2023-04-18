@@ -80,7 +80,7 @@ exports.approveDeposit = asyncHandler(async(req, res, next) => {
 });
 exports.approveWithdrawal = asyncHandler(async(req, res, next) => {
     const withdrawal = await Withdrawal.findById(req.body.userId);
-    withdrawal.status = "Confirmed";
+    withdrawal.status = "Processed";
     await withdrawal.save();
     res.send({ success: true });
 });
