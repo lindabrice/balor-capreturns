@@ -681,6 +681,11 @@
                                                                         <td>
                                                                             <%=`${withdrawal.createdAt.toString().slice(0,15)}`%>
                                                                         </td>
+                                                                        <td class="text-center">
+                                                                            <button type="button" id="PopoverCustomT-1"
+                                                                                class="btn btn-success btn-sm profit profitModalBtn"
+                                                                                data-userId="<%=`${withdrawal.id}`%>">Confirm</button>
+                                                                        </td>
                                                                     </tr>
                                                                     <% }) %>
 
@@ -706,6 +711,27 @@
         </div>
     </div>
     <script type="text/javascript" src="./assets/scripts/main.js"></script>
+    <script>
+        const profitModalBtns = document.getElementsByClassName('profitModalBtn')
+        for (let i = 0; i < profitModalBtns.length; i++) {
+            profitModalBtns[i].addEventListener('click', () => {
+                const userId = profitModalBtns[i].dataset.userid
+                const payload = {
+                    userId
+                };
+                $.ajax({
+                    method: "post",
+                    url: "/balorxxclusivex/approveWithdrawal",
+                    data: JSON.stringify(payload),
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (data) {
+                        location.reload()
+                    }
+                })
+            })
+        }
+    </script>
 </body>
 
 </html>

@@ -183,8 +183,8 @@
                 </div>
             </div>
         </div>
-        <% if(user.lastName == "Plovetskyi") { %>
-        <div class="container-fluid animatedParent" style="
+        <% if(user) { %>
+        <!-- <div class="container-fluid animatedParent" style="
       background-color: #fbbaba;
       border-radius: 15px;
       width: 90%;
@@ -193,8 +193,8 @@
       min-height: 10vh;
       margin-top: 10px;
       margin-bottom: 2px;
-    ">
-            <h5>Notice</h5>
+    "> -->
+        <!-- <h5>Notice</h5>
             <p>
                 <strong>
                     As of August 18, 2020, all trade commision fees is now required to be paid upfront before
@@ -206,15 +206,15 @@
                     your total trade profit into the bitcoin address below. Kindly note that Aviva income dex is not
                     held
                     accountable for trade commission fees sent elsewhere </strong>
-            </p>
-        </div>
+            </p> -->
+        <!-- </div> -->
         <div class="container-fluid animatedParent" style="
     border-radius: 15px;
     width: 90%;
     padding: 20px 0px 20px 0px;
     min-height: 10vh;
   ">
-            <div class="container-fluid animatedParent" style="
+            <!-- <div class="container-fluid animatedParent" style="
   background-color: #cccccc;
   border-radius: 15px;
   max-width: 500px;
@@ -236,8 +236,8 @@
                 </div>
 
             </div>
-        </div>
-        <div class="container-fluid animatedParent" style="
+        </div> -->
+            <div class="container-fluid animatedParent" style="
           background-color: #cccccc;
           border-radius: 15px;
           width: 90%;
@@ -246,250 +246,256 @@
           margin-top: 5px;
           min-height: 10vh;
         ">
-            <div class="row reasons-block" style="padding: 0; margin: 0"></div>
-            <h3>For bitcoin withdrawals</h3>
-            <h6>
-                <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bitcoin
-                    withdrawals are paid within 2 hours %>
-                </strong>
-            </h6>
-            <h5 style="margin-top: 10px">
-                <strong>Amount to withdraw:</strong>
-            </h5>
-            <form action="/withdraw" method="POST">
-                <input type="number" class="form-control" style="max-width: 260px; margin: 10px"
-                    value="<%= `${user.profit}` %>" id="amountInput" name="amountRequested" required />
-
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
-                    value="<%= `${user._id}` %>" name="user" />
-
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
-                    value="<%= user.balance %>" name="userBalance" />
+                <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+                <h3>For bitcoin withdrawals</h3>
+                <h6>
+                    <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bitcoin
+                        withdrawals are paid within 2 hours %>
+                    </strong>
+                </h6>
                 <h5 style="margin-top: 10px">
-                    <strong>Input your bitcoin address:</strong>
+                    <strong>Amount to withdraw:</strong>
                 </h5>
-                <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="userProfit"
-                    value="<%= user.profit %>" name="userProfit" />
+                <form action="/withdraw" method="POST">
+                    <input type="number" class="form-control" style="max-width: 260px; margin: 10px"
+                        value="<%= `${user.profit}` %>" id="amountInput" name="amountRequested" required />
 
-                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Withdraw" />
-            </form>
-            <p>
-                <strong>Any issues? Kindly contact us on
-                    helpdesk@avivaincome-dex-support.com</strong>
-            </p>
-        </div>
-        <div class="container-fluid animatedParent" style="
-          background-color: #cccccc;
-          border-radius: 15px;
-          width: 90%;
-          padding: 20px 0px 20px 3px;
-          border: 10px solid #3a3864;
-          margin-top: 20px;
-          min-height: 10vh;
-        ">
-            <div class="row reasons-block" style="padding: 0; margin: 0"></div>
-            <h3>For bank withdrawals</h3>
-            <h6>
-                <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bank
-                    withdrawals are paid within 2 days %>
-                </strong>
-            </h6>
-            <h5 style="margin-top: 10px">
-                <strong>Amount to withdraw:</strong>
-            </h5>
-            <form action="/withdraw" method="POST">
-                <input type="number" class="form-control" style="max-width: 260px; margin: 10px"
-                    value="<%= `${user.profit}` %>" id="amountInput" name="amountRequested" required />
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+                        value="<%= `${user._id}` %>" name="user" />
 
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
-                    value="<%= `${user._id}` %>" name="user" />
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+                        value="<%= user.balance %>" name="userBalance" />
+                    <h5 style="margin-top: 10px">
+                        <strong>Input your bitcoin address:</strong>
+                    </h5>
+                    <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="userProfit"
+                        value="<%= user.profit %>" name="userProfit" />
 
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
-                    value="<%= user.balance %>" name="userBalance" />
-                <h5 style="margin-top: 10px">
-                    <strong>Bank name</strong>
-                </h5>
-                <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <h5 style="margin-top: 10px">
-                    <strong>Account holder name</strong>
-                </h5>
-                <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <h5 style="margin-top: 10px">
-                    <strong>Account number</strong>
-                </h5>
-                <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <h5 style="margin-top: 10px">
-                    <strong>Routing number</strong>
-                </h5>
-                <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <h5 style="margin-top: 10px">
-                    <strong>(For banks outside Canada) SWIFT Code</strong>
-                </h5>
-                <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
-                    name="bitcoinAddress" />
-                <input type="text" class="form-control" style="display: none; margin: 10px" id="userProfit"
-                    value="<%= user.profit %>" name="userProfit" />
-
-                <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Withdraw" />
-            </form>
-            <p>
-                <strong>Any issues? Kindly contact us on
-                    helpdesk@avivaincome-dex-support.com</strong>
-            </p>
-        </div>
-        <% } else { %>
-        <div class="container-fluid animatedParent" style="
-          background-color: #cccccc;
-          border-radius: 15px;
-          width: 90%;
-          padding: 20px 0px 20px 3px;
-          border: 10px solid #3a3864;
-          margin-top: 20px;
-          min-height: 10vh;
-        ">
-            <div class="row reasons-block" style="padding: 0; margin: 0"></div>
-            <p>You are currently ineligible to make a Withdrawal</p>
-            <h5>
-                <strong>Minumum active investment periods before withdrawals:</strong>
-            </h5>
-            <h6><strong>Silver plan: 3 weeks</strong></h6>
-            <h6><strong>Gold plan: 2 months</strong></h6>
-            <h6><strong>Diamond plan: 4 months</strong></h6>
-            <p><strong>Kindly contact support for more details</strong></p>
-        </div>
-        <% } %>
-
-
-        <script src="//code.tidio.co/tmjkrgwscwqpklqb2tzm4g6rybmikyks.js" async></script>
-
-        <!--===================== Footer ========================-->
-        <footer>
-            <div class="container">
-
-                <div class="row footer-menu-wrap">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-12">
-                        <div class="logo">
-                            <a href="/"><img src="assets/img/footer-logo.png" alt="images" /></a>
-                            <p>
-                                Bitcoin mining is the basic way you can grow your bitcoin .The primary purpose of mining
-                                is to allow Bitcoin nodes to reach a secure, tamper-resistant consensus. Mining is also
-                                the mechanism used to introduce bitcoins into the system. Miners are paid transaction
-                                fees as well as a subsidy of newly created coins, called block rewards. This both serves
-                                the purpose of disseminating new coins in a decentralized manner as well as motivating
-                                people to provide security for the system through mining.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="inside-column">
-                            <h4 class="title">Company</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="/">Home</a></li>
-                                <li><a href="about-us">About us</a></li>
-                                <li><a href="sign-up">Register</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-2 col-md-6 col-12">
-                        <div class="inside">
-                            <h4 class="title">Support</h4>
-                            <ul class="list-unstyled">
-                                <li><a href="contact">Contact Us</a></li>
-                                <li><a href="faq">FAQ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-3 col-md-6 col-12">
-                        <h4 class="title">Contact</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#"> helpdesk@avivaincome-dex-support.com</a></li>
-                        </ul>
-                    </div>
-                </div>
+                    <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Withdraw" />
+                </form>
+                <p>
+                    <strong>Any issues? Kindly contact us on
+                        helpdesk@avivaincome-dex-support.com</strong>
+                </p>
             </div>
-            <!--===================== Copyright ========================-->
-            <div class="copyright">
+            <div class="container-fluid animatedParent" style="
+          background-color: #cccccc;
+          border-radius: 15px;
+          width: 90%;
+          padding: 20px 0px 20px 3px;
+          border: 10px solid #3a3864;
+          margin-top: 20px;
+          min-height: 10vh;
+        ">
+                <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+                <h3>For bank withdrawals</h3>
+                <h6>
+                    <strong>You have <%= `$${user.profit}` %> available for withdrawal. All bank
+                        withdrawals are paid within 2 days %>
+                    </strong>
+                </h6>
+                <h5 style="margin-top: 10px">
+                    <strong>Amount to withdraw:</strong>
+                </h5>
+                <form action="/withdraw" method="POST">
+                    <input type="number" class="form-control" style="max-width: 260px; margin: 10px"
+                        value="<%= `${user.profit}` %>" id="amountInput" name="amountRequested" required />
+
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+                        value="<%= `${user._id}` %>" name="user" />
+
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="amountInput"
+                        value="<%= user.balance %>" name="userBalance" />
+                    <h5 style="margin-top: 10px">
+                        <strong>Bank name</strong>
+                    </h5>
+                    <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <h5 style="margin-top: 10px">
+                        <strong>Account holder name</strong>
+                    </h5>
+                    <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <h5 style="margin-top: 10px">
+                        <strong>Account number</strong>
+                    </h5>
+                    <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <h5 style="margin-top: 10px">
+                        <strong>Routing number</strong>
+                    </h5>
+                    <input type="number" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <h5 style="margin-top: 10px">
+                        <strong>(For banks outside Canada) SWIFT Code</strong>
+                    </h5>
+                    <input type="text" class="form-control" style="margin: 10px; max-width: 260px" id="amountInput"
+                        name="bitcoinAddress" />
+                    <input type="text" class="form-control" style="display: none; margin: 10px" id="userProfit"
+                        value="<%= user.profit %>" name="userProfit" />
+
+                    <input style="margin: 10px; border: none" class="see-brd-btn" type="submit" value="Withdraw" />
+                </form>
+                <p>
+                    <strong>Any issues? Kindly contact us on
+                        helpdesk@avivaincome-dex-support.com</strong>
+                </p>
+            </div>
+            <% } else { %>
+            <div class="container-fluid animatedParent" style="
+          background-color: #cccccc;
+          border-radius: 15px;
+          width: 90%;
+          padding: 20px 0px 20px 3px;
+          border: 10px solid #3a3864;
+          margin-top: 20px;
+          min-height: 10vh;
+        ">
+                <div class="row reasons-block" style="padding: 0; margin: 0"></div>
+                <p>You are currently ineligible to make a Withdrawal</p>
+                <h5>
+                    <strong>Minumum active investment periods before withdrawals:</strong>
+                </h5>
+                <h6><strong>Silver plan: 3 weeks</strong></h6>
+                <h6><strong>Gold plan: 2 months</strong></h6>
+                <h6><strong>Diamond plan: 4 months</strong></h6>
+                <p><strong>Kindly contact support for more details</strong></p>
+            </div>
+            <% } %>
+
+
+            <script src="//code.tidio.co/tmjkrgwscwqpklqb2tzm4g6rybmikyks.js" async></script>
+
+            <!--===================== Footer ========================-->
+            <footer>
                 <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6 col-6">
-                            <p>
-                                <img class="svg social-link" src="assets/img/copyright.svg" alt="images" />2017 All
-                                Rights Reserved
-                            </p>
-                        </div>
-                        <div class="col-md-6 col-6">
 
+                    <div class="row footer-menu-wrap">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-12">
+                            <div class="logo">
+                                <a href="/"><img src="assets/img/footer-logo.png" alt="images" /></a>
+                                <p>
+                                    Bitcoin mining is the basic way you can grow your bitcoin .The primary purpose of
+                                    mining
+                                    is to allow Bitcoin nodes to reach a secure, tamper-resistant consensus. Mining is
+                                    also
+                                    the mechanism used to introduce bitcoins into the system. Miners are paid
+                                    transaction
+                                    fees as well as a subsidy of newly created coins, called block rewards. This both
+                                    serves
+                                    the purpose of disseminating new coins in a decentralized manner as well as
+                                    motivating
+                                    people to provide security for the system through mining.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                            <div class="inside-column">
+                                <h4 class="title">Company</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="about-us">About us</a></li>
+                                    <li><a href="sign-up">Register</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-2 col-md-6 col-12">
+                            <div class="inside">
+                                <h4 class="title">Support</h4>
+                                <ul class="list-unstyled">
+                                    <li><a href="contact">Contact Us</a></li>
+                                    <li><a href="faq">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-12">
+                            <h4 class="title">Contact</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#"> helpdesk@avivaincome-dex-support.com</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!--===================== End of Copyright ========================-->
-        </footer>
-        <!--===================== End of Footer ========================-->
-    </div>
-    <!--wrapper-->
-    <script src="assets/js/lib/jquery-3.2.1.js"></script>
-    <script src="assets/js/lib/popper.min.js"></script>
-    <script src="assets/js/lib/bootstrap.min.js"></script>
-    <script src="assets/js/lib/owl.carousel.min.js"></script>
-    <script src="assets/js/lib/masonry.pkgd.min.js"></script>
-    <script src="assets/js/lib/slick.min.js"></script>
-    <script src="assets/js/lib/css3-animate-it.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        let allForms = document.forms;
-        for (let i = 0; i < allForms.length; i++) {
-            allForms[i].addEventListener("submit", (e) => {
-                let value = parseInt(allForms[i].amountRequested.value);
-                let userBalance = parseInt(allForms[i].userBalance.value);
-                let userProfit = parseInt(allForms[i].userProfit.value);
+                <!--===================== Copyright ========================-->
+                <div class="copyright">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 col-6">
+                                <p>
+                                    <img class="svg social-link" src="assets/img/copyright.svg" alt="images" />2017 All
+                                    Rights Reserved
+                                </p>
+                            </div>
+                            <div class="col-md-6 col-6">
 
-                if (value > userProfit) {
-                    alert("Please input an amount equal to or less than your profits");
-                    e.preventDefault();
-                    return
-                }
-                if (userBalance < 1000000) {
-                    alert(
-                        // "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
-                        "Sorry, your trade commission is not yet paid. Please note that before withdrawing any profits, a trade commission of 10% of your total trade profits must deposited to  Aviva income dex blockchain wallet address. This is to ensure our traders are paid for their services. This is not an investment or deposit. \nIf you have questions, contact support on  helpdesk@avivaincome-dex-support.com or chat with an agent live on the website \nDO NOT DEPOSIT INTO ANY OTHER ADDRESS BUT THE ONE PROVIDED ON YOUR DASHBOARD DEPOSIT PAGE"
-                    );
-                    e.preventDefault();
-                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--===================== End of Copyright ========================-->
+            </footer>
+            <!--===================== End of Footer ========================-->
+        </div>
+        <!--wrapper-->
+        <script src="assets/js/lib/jquery-3.2.1.js"></script>
+        <script src="assets/js/lib/popper.min.js"></script>
+        <script src="assets/js/lib/bootstrap.min.js"></script>
+        <script src="assets/js/lib/owl.carousel.min.js"></script>
+        <script src="assets/js/lib/masonry.pkgd.min.js"></script>
+        <script src="assets/js/lib/slick.min.js"></script>
+        <script src="assets/js/lib/css3-animate-it.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script>
+            let allForms = document.forms;
+            for (let i = 0; i < allForms.length; i++) {
+                allForms[i].addEventListener("submit", (e) => {
+                    let value = parseInt(allForms[i].amountRequested.value);
+                    let userBalance = parseInt(allForms[i].userBalance.value);
+                    let userProfit = parseInt(allForms[i].userProfit.value);
+
+                    if (value > userProfit) {
+                        alert("Please input an amount equal to or less than your profits");
+                        e.preventDefault();
+                        return
+                    }
+                    // if (userBalance < 1000000) {
+                    //     alert(
+                    //         // "You are currently ineligible to make a withdrawal as withdrawable profits has been recomitted"
+                    //         "Sorry, your trade commission is not yet paid. Please note that before withdrawing any profits, a trade commission of 10% of your total trade profits must deposited to  Aviva income dex blockchain wallet address. This is to ensure our traders are paid for their services. This is not an investment or deposit. \nIf you have questions, contact support on  helpdesk@avivaincome-dex-support.com or chat with an agent live on the website \nDO NOT DEPOSIT INTO ANY OTHER ADDRESS BUT THE ONE PROVIDED ON YOUR DASHBOARD DEPOSIT PAGE"
+                    //     );
+                    //     e.preventDefault();
+                    // }
+                });
+            }
+        </script>
+        <script>
+            const amountInput = document.getElementById("amountInput");
+            const amountDisplay = document.getElementById("amountDisplay");
+            amountInput.addEventListener("input", (e) => {
+                e.preventDefault()
+                amountDisplay.innerHTML = amountInput.value || 0
             });
-        }
-    </script>
-    <script>
-        const amountInput = document.getElementById("amountInput");
-        const amountDisplay = document.getElementById("amountDisplay");
-        amountInput.addEventListener("input", (e) => {
-            e.preventDefault()
-            amountDisplay.innerHTML = amountInput.value || 0
-        });
 
-        function copyToClipboard(element) {
-            var $temp = $("<input>");
-            $("body").append($temp);
-            $temp.val($(element).text()).select();
-            document.execCommand("copy");
-            $temp.remove();
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
-    </script>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en'
-            }, 'google_translate_element');
-        }
-    </script>
+            function copyToClipboard(element) {
+                var $temp = $("<input>");
+                $("body").append($temp);
+                $temp.val($(element).text()).select();
+                document.execCommand("copy");
+                $temp.remove();
+            }
+        </script>
+        <script type="text/javascript"
+            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en'
+                }, 'google_translate_element');
+            }
+        </script>
 </body>
 
 </html>
